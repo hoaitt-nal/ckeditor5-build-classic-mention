@@ -14,17 +14,26 @@
     <h1>CKEditor 5 – classic editor build – development sample</h1>
 
     <div id="editor">
-      <p><span class="mention" data-mention="@ThanhHoai">@ThanhHoai</span> asda</p>
+      <p>
+        <span class="mention" data-mention="@ThanhHoai">@ThanhHoai</span> asda
+      </p>
       <h2>Sample</h2>
 
       <p>
         This is an instance of the
-        <a href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html#classic-editor">classic editor build</a>.
+        <a
+          href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/overview.html#classic-editor"
+          >classic editor build</a
+        >.
       </p>
 
       <p>
         You can use this sample to validate whether your
-        <a href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/custom-builds.html">custom build</a> works fine.
+        <a
+          href="https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/custom-builds.html"
+          >custom build</a
+        >
+        works fine.
       </p>
     </div>
 
@@ -37,20 +46,48 @@
               marker: '@',
               // feed: ['@thanhhoai1', '@thanhhoai2', '@thanhhoai3', '@thanhhoai4'],
               feed: [
-                { id: '@thanhhoai1', uId: 'thanhhoai1', name: 'thanhhoai1', email: 'thanhhoai1@nal.vn' },
-                { id: '@thanhhoai2', uId: 'thanhhoai2', name: 'thanhhoai2', email: 'thanhhoai2@nal.vn' },
-                { id: '@thanhhoai3', uId: 'thanhhoai3', name: 'thanhhoai3', email: 'thanhhoai3@nal.vn' },
-                { id: '@thanhhoai4', uId: 'thanhhoai4', name: 'thanhhoai4', email: 'thanhhoai4@nal.vn' },
+                {
+                  id: '@thanhhoai1',
+                  uId: 'thanhhoai1',
+                  name: 'thanhhoai1',
+                  email: 'thanhhoai1@nal.vn',
+                },
+                {
+                  id: '@thanhhoai2',
+                  uId: 'thanhhoai2',
+                  name: 'thanhhoai2',
+                  email: 'thanhhoai2@nal.vn',
+                },
+                {
+                  id: '@thanhhoai3',
+                  uId: 'thanhhoai3',
+                  name: 'thanhhoai3',
+                  email: 'thanhhoai3@nal.vn',
+                },
+                {
+                  id: '@thanhhoai4',
+                  uId: 'thanhhoai4',
+                  name: 'thanhhoai4',
+                  email: 'thanhhoai4@nal.vn',
+                },
               ],
               minimumCharacters: 1,
             },
           ],
         },
+        wordCount: {
+          onUpdate: (stats) => {
+            // Prints the current content statistics.
+            console.log(
+              `Characters: ${stats.characters}\nWords: ${stats.words}`
+            );
+          },
+        },
       })
-        .then(editor => {
+        .then((editor) => {
           window.editor = editor;
         })
-        .catch(error => {
+        .catch((error) => {
           console.error('There was a problem initializing the editor.', error);
         });
     </script>

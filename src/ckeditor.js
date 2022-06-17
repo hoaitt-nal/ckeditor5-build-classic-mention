@@ -27,6 +27,7 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table.js';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
+import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
 
 import MentionCus from './plugins/mention-custom.js';
 
@@ -58,6 +59,7 @@ Editor.builtinPlugins = [
   Table,
   TableToolbar,
   TextTransformation,
+  WordCount,
   MentionCus,
 ];
 
@@ -85,7 +87,12 @@ Editor.defaultConfig = {
     ],
   },
   image: {
-    toolbar: ['imageTextAlternative', 'imageStyle:inline', 'imageStyle:block', 'imageStyle:side'],
+    toolbar: [
+      'imageTextAlternative',
+      'imageStyle:inline',
+      'imageStyle:block',
+      'imageStyle:side',
+    ],
   },
   table: {
     contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells'],
